@@ -1,0 +1,17 @@
+version: '2'
+services:
+  phpfpm:
+    build: .
+    volumes:
+      - ${PHP_SOURCE_DIR}:/var/www/default/htdocs
+  web:
+    image: devilbox/nginx-stable
+    volumes:
+      - ${PHP_SOURCE_DIR}:/var/www/default/htdocs
+    environment:
+      - PHP_FPM_ENABLE=1
+      - PHP_FPM_SERVER_ADDR=phpfpm
+    ports:
+      - "${OPENPORT}:80"
+    links:
+      - phpfpm

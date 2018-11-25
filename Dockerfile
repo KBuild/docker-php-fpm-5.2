@@ -140,8 +140,12 @@ RUN set -x \
 	&& cd / \
 	&& docker-php-source delete
 
-
 WORKDIR /var/www/html
+
+RUN mkdir -p /usr/local/lib/php/extensions/no-debug-non-zts-20060613
+COPY ZendOptimizer.so /usr/local/lib/php/extensions/no-debug-non-zts-20060613
+COPY zendoptimizer.ini /usr/local/etc/php/conf.d/
+
 COPY docker-php-* /usr/local/bin/
 COPY php-fpm /usr/local/sbin/php-fpm
 COPY php-fpm.conf /usr/local/etc/

@@ -1,4 +1,4 @@
-# PHP-FPM 5.2
+# PHP-FPM 5.2 /w Zend Optimizer
 
 [![Build Status](https://travis-ci.org/devilbox/docker-php-fpm-5.2.svg?branch=master)](https://travis-ci.org/devilbox/docker-php-fpm-5.2)
 ![Tag](https://img.shields.io/github/tag/devilbox/docker-php-fpm-5.2.svg)
@@ -9,6 +9,7 @@
 
 This repository will provide you a fully functional PHP-FPM 5.2.17 Docker image built from [official sources](http://museum.php.net) nightly. Additional patches have been applied to enable FPM functionality. It provides the base for [Devilbox PHP-FPM Docker images](https://github.com/devilbox/docker-php-fpm).
 
+And Zend Optimizer patched version by KBuild. If you have a issue with PHP-FPM 5.2 Docker image, please go to original repository [Devilbox PHP-FPM Docker images](https://github.com/devilbox/docker-php-fpm).
 
 | Docker Hub | Upstream Project |
 |------------|------------------|
@@ -91,6 +92,11 @@ Open up your browser at http://127.0.0.1:8080
 
 * Make PHP-FPM 5.2 work with Apache 2.2
 
+## With Docker Compose
+
+```bash
+docker-compose up -d
+```
 
 ## License
 
